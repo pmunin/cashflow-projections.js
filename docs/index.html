@@ -62,11 +62,11 @@
 					<h1>🚀 Cashflow projections</h1>
 				</a>
 				<p><a href="https://www.npmjs.com/package/cashflow-projections"><img src="https://img.shields.io/npm/v/cashflow-projections.svg?style=flat-square" alt="NPM Version"></a>
-					<a href="https://github.com/pmunin/cashflow-projections.js/.github/actions/workflows/main.yml"><img src="https://github.com/pmunin/cashflow-projections.js//actions/workflows/main.yml/badge.svg" alt="Build Status"></a>
+					<a href="https://github.com/pmunin/cashflow-projections.js/actions/workflows/main.yml"><img src="https://github.com/pmunin/cashflow-projections.js/actions/workflows/main.yml/badge.svg" alt="Build Status"></a>
 				<a href="https://pmunin.github.io/cashflow-projections.js/"><img src="https://img.shields.io/badge/docs-typedoc-blue?style=flat&logo=Read%20the%20Docs" alt="Docs"></a></p>
 				<p>This javascript module lets you easily generate projections</p>
 				<p>For example:</p>
-				<pre><code class="language-js"><span style="color: #795E26">getCashflowProjections</span><span style="color: #000000">({ </span>
+				<pre><code class="language-js"><span style="color: #795E26">getCashflowProjections</span><span style="color: #000000">({ </span><span style="color: #008000">//full set of args: https://pmunin.github.io/cashflow-projections.js/modules.html#CashflowArgs</span>
 <span style="color: #000000">  </span><span style="color: #001080">startDate:</span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #267F99">Date</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;01/01/2020&#039;</span><span style="color: #000000">),</span>
 <span style="color: #000000">  </span><span style="color: #001080">periods:</span><span style="color: #000000"> </span><span style="color: #098658">24</span><span style="color: #000000">,</span>
 <span style="color: #000000">  </span><span style="color: #001080">accruals:</span><span style="color: #000000">{</span>
@@ -95,7 +95,7 @@
 <span style="color: #000000">  {</span><span style="color: #001080">date:</span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #267F99">Date</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;12/01/2021&#039;</span><span style="color: #000000">), </span><span style="color: #001080">period:</span><span style="color: #098658">12</span><span style="color: #000000">, </span><span style="color: #001080">accruals:</span><span style="color: #000000">{</span><span style="color: #001080">salary:</span><span style="color: #000000">{</span><span style="color: #001080">amount:</span><span style="color: #098658">10000</span><span style="color: #000000">}, </span><span style="color: #001080">tax:</span><span style="color: #000000">{</span><span style="color: #001080">amount:</span><span style="color: #098658">2500</span><span style="color: #000000">, </span><span style="color: #001080">description:</span><span style="color: #A31515">&#039;tax&#039;</span><span style="color: #000000">}, </span><span style="color: #001080">bonus:</span><span style="color: #000000">{</span><span style="color: #001080">amount:</span><span style="color: #098658">5000</span><span style="color: #000000">}}, </span><span style="color: #001080">totals:</span><span style="color: #000000">{</span><span style="color: #001080">salary:</span><span style="color: #000000">{</span><span style="color: #001080">amount:</span><span style="color: #098658">120000</span><span style="color: #000000">}}},</span>
 <span style="color: #000000">]</span>
 
-<span style="color: #008000">//accruals and totals are actually of type array, by also have properties defined in the accrual configuration</span>
+<span style="color: #008000">//accruals and totals are actually arrays, but it also have properties defined in the accrual configuration specified in properties keys</span>
 </code></pre>
 				<p><a href="https://pmunin.github.io/cashflow-projections.js/">Read more docs here</a></p>
 			</div>
