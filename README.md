@@ -38,3 +38,5 @@ Generates array of:
 ]
 //accruals and totals are actually of type array, by also have properties defined in the accrual configuration
 ```
+
+[Docs are here](https://pmunin.github.io/cashflow-projections.js/)
