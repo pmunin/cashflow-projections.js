@@ -9,7 +9,6 @@
         "build": "webpack --mode=production --node-env=production",
         "build:dev": "webpack --mode=development",
         "build:prod": "webpack --mode=production --node-env=production",
-        "babel": "babel src --extensions \".ts\" --out-dir dist/babel",
         "watch": "webpack --watch",
         "doc": "typedoc"
     },
