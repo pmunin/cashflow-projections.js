@@ -1,5 +1,9 @@
 # 🚀 Cashflow projections
 
+[![NPM Version][npm-image]][npm-url]
+[![Build Status][build-image]][build-url]
+[![Docs][docs-image]][docs-url]
+
 This javascript module lets you easily generate projections
 
 For example:
@@ -36,7 +40,18 @@ Generates array of:
   {date:new Date('11/01/2021'), period:11, accruals:{salary:{amount:10000}, tax:{amount:2500, description:'tax'}}, totals:{salary:{amount:11000}}},
   {date:new Date('12/01/2021'), period:12, accruals:{salary:{amount:10000}, tax:{amount:2500, description:'tax'}, bonus:{amount:5000}}, totals:{salary:{amount:120000}}},
 ]
+
 //accruals and totals are actually of type array, by also have properties defined in the accrual configuration
 ```
 
-[Docs are here](https://pmunin.github.io/cashflow-projections.js/)
+[Read more docs here][docs-url]
+
+
+[npm-image]: https://img.shields.io/npm/v/cashflow-projections.svg?style=flat-square
+[npm-url]: https://www.npmjs.com/package/cashflow-projections
+[build-image]:https://github.com/pmunin/cashflow-projections.js//actions/workflows/main.yml/badge.svg
+[build-url]:https://github.com/pmunin/cashflow-projections.js/.github/actions/workflows/main.yml
+[downloads-image]: https://img.shields.io/npm/dm/cashflow-projections.svg?style=flat-square
+[downloads-url]: https://www.npmjs.com/package/cashflow-projections
+[docs-url]:https://pmunin.github.io/cashflow-projections.js/
+[docs-image]:https://img.shields.io/badge/docs-typedoc-blue?style=flat&logo=Read%20the%20Docs
