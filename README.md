@@ -9,7 +9,7 @@ This javascript module lets you easily generate projections
 For example:
 
 ```js
-getCashflowProjections({ 
+getCashflowProjections({ //full set of args: https://pmunin.github.io/cashflow-projections.js/modules.html#CashflowArgs
   startDate:new Date('01/01/2020'),
   periods: 24,
   accruals:{
@@ -41,7 +41,7 @@ Generates array of:
   {date:new Date('12/01/2021'), period:12, accruals:{salary:{amount:10000}, tax:{amount:2500, description:'tax'}, bonus:{amount:5000}}, totals:{salary:{amount:120000}}},
 ]
 
-//accruals and totals are actually of type array, by also have properties defined in the accrual configuration
+//accruals and totals are actually arrays, but it also have properties defined in the accrual configuration specified in properties keys
 ```
 
 [Read more docs here][docs-url]
@@ -49,8 +49,8 @@ Generates array of:
 
 [npm-image]: https://img.shields.io/npm/v/cashflow-projections.svg?style=flat-square
 [npm-url]: https://www.npmjs.com/package/cashflow-projections
-[build-image]:https://github.com/pmunin/cashflow-projections.js//actions/workflows/main.yml/badge.svg
-[build-url]:https://github.com/pmunin/cashflow-projections.js/.github/actions/workflows/main.yml
+[build-image]:https://github.com/pmunin/cashflow-projections.js/actions/workflows/main.yml/badge.svg
+[build-url]:https://github.com/pmunin/cashflow-projections.js/actions/workflows/main.yml
 [downloads-image]: https://img.shields.io/npm/dm/cashflow-projections.svg?style=flat-square
 [downloads-url]: https://www.npmjs.com/package/cashflow-projections
 [docs-url]:https://pmunin.github.io/cashflow-projections.js/
