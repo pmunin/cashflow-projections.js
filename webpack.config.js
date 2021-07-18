@@ -15,7 +15,7 @@ const config = {
             name: "cashflow-projections",
             type: "umd"
         },
-        filename: `cashflow-projections${isProduction?'.min':''}.js`,
+        filename: `index.js`,
         clean: true
     },
     plugins: [

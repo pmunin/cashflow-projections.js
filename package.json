@@ -1,11 +1,12 @@
 {
     "name": "cashflow-projections",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "description": "JS utilities to generate cashflow projections",
     "repository": {
         "url": "https://github.com/pmunin/cashflow-projections.js.git"
     },
-    "main": "index.js",
+    "homepage": "https://pmunin.github.io/cashflow-projections.js/",
+    "main": "dist/index.js",
     "scripts": {
         "test": "jest --coverage --verbose",
         "test:watch": "jest --watchAll --coverage",
