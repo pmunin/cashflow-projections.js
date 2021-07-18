@@ -4,7 +4,7 @@
     "description": "JS utilities to generate cashflow projections",
     "main": "index.js",
     "scripts": {
-        "test": "jest --coverage",
+        "test": "jest --coverage --verbose",
         "test:watch": "jest --watchAll --coverage",
         "build": "webpack --mode=production --node-env=production",
         "build:dev": "webpack --mode=development",

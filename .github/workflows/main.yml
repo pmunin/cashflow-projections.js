@@ -44,3 +44,22 @@ jobs:
       - name: Docs generation
         run: |
           npm run doc
+
+      - name: Dist => Artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: dist
+          path: |
+            dist
+
+      - name: coverage => Artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: coverage
+          path: coverage
+
+      - name: docs => Artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: docs
+          path: docs

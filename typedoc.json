@@ -1,5 +1,5 @@
 {
-    "out": "./dist/docs",
+    "out": "./docs",
     "includes": "src",
     "excludeExternals": false,
     "disableOutputCheck": false,
