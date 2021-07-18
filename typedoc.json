@@ -1,0 +1,7 @@
+{
+    "out": "./dist/docs",
+    "includes": "src",
+    "excludeExternals": false,
+    "disableOutputCheck": false,
+    "entryPoints": ["./src/index.ts"]
+}
