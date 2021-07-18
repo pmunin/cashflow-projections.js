@@ -63,3 +63,14 @@ jobs:
         with:
           name: docs
           path: docs
+
+      - name: GitHub Push
+        uses: github-actions-x/commit@v2.8
+        with:
+          # Github Token with commit access
+          github_token: ${ secrets.GITHUB_TOKEN }
+          # Specify commit message
+          commit-message: Updating repo [skip ci]
+          # Pull and rebase before commiting. Useful when using commit inside matrix.
+          rebase: false # optional, default is false
+          force-push: true # optional, default is false
