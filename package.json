@@ -7,7 +7,9 @@
     },
     "homepage": "https://pmunin.github.io/cashflow-projections.js/",
     "main": "dist/index.js",
-    "files": ["/dist"],
+    "files": [
+        "/dist"
+    ],
     "scripts": {
         "test": "jest --coverage --verbose",
         "test:watch": "jest --watchAll --coverage",
