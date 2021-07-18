@@ -12,11 +12,12 @@ const config = {
     output: {
         path: path.resolve(__dirname, "dist"),
         library: {
-            name: "cashflow-projections",
+            name: "cashflowProjections",
             type: "umd"
         },
         filename: `index.js`,
-        clean: true
+        clean: true,
+        globalObject: 'this'
     },
     plugins: [
         // Add your plugins here

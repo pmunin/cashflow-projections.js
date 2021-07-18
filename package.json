@@ -1,6 +1,6 @@
 {
     "name": "cashflow-projections",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "description": "JS utilities to generate cashflow projections",
     "repository": {
         "url": "https://github.com/pmunin/cashflow-projections.js.git"
