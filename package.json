@@ -7,7 +7,11 @@
     },
     "homepage": "https://pmunin.github.io/cashflow-projections.js/",
     "main": "dist/index.js",
-    "keywords": ["cashflow", "projections", "finance"],
+    "keywords": [
+        "cashflow",
+        "projections",
+        "finance"
+    ],
     "files": [
         "/dist"
     ],
