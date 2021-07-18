@@ -68,7 +68,7 @@ jobs:
         uses: github-actions-x/commit@v2.8
         with:
           # Github Token with commit access
-          github_token: ${ secrets.GITHUB_TOKEN }
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           # Specify commit message
           commit-message: Updating repo [skip ci]
           # Pull and rebase before commiting. Useful when using commit inside matrix.
