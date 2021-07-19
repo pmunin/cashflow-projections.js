@@ -42,7 +42,7 @@ jobs:
 
     - name: Version bump
       run: |
-        npm version ${{ github.event.inputs.version_parameters }} -m \"Version (${{ github.event.inputs.version_parameters }}): %s [skip ci]\"
+        npm version ${{ github.event.inputs.version_parameters }} -m "Version (${{ github.event.inputs.version_parameters }}): %s [skip ci]"
   
     - name: Running build
       run: |
