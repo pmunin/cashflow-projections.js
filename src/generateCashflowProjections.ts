@@ -112,31 +112,32 @@ export type CashflowAccrualObject = {
 
 
 /**
- * Defines how to generate accrual for a cashflow projection
- * @example {
- * 
-* {
-*   salary:()=>100000/12,
-*   tax:cf=>({amount:-cf.salary*0.25, description:'tax'}),
-*   bonus:cf=>cf.date.getMonth()==11?cf.salary*0.1:undefined
-* }
-* ---OR---
-* accruals:
-* [
-*   cf=>{
-*     var salary = 100000/12;
-*     var tax= -salary*0.25,
-*     return {
-*       salary,
-*       tax
-*     }
-*   },
-*   cf=>{
-*     if(cf.date.getMonth()==11) return { bonus:{amount:10000, description:'second part of bonus'}};
-*   }
-* ]
-* }
-*/
+ * Defines how to generate accrual for a cashflow projection. 
+ * @example
+ * ```js
+ * accruals:{ // Can be dictionary of functions
+ *   salary:()=>100000/12,  //this will create accrual cf.accruals.salary={amount:8333.3333}
+ *   tax:cf=>({amount:-cf.salary*0.25, description:'tax'}), //because tax definition is after salary, by the time tax accrual is executed, salary will be already in the accrual collection
+ *   bonus:cf=>cf.date.getMonth()==11?cf.salary*0.1:undefined //if returns undefined, it will not be added to the accrual collection
+ * }
+ * //---OR---
+ * accruals: // Can be dictionary of functions
+ * [
+ *   cf=>{
+ *     var salary = 100000/12;
+ *     var tax= -salary*0.25,
+ *     return { //this will add 2 accruals salary:{amount:8333.3333} and  tax:{amount:-2083.3333)
+ *       salary,
+ *       tax
+ *     }
+ *   },
+ *   cf=>{
+ *     if(cf.date.getMonth()==11) return { bonus:{amount:10000, description:'second part of bonus'}};
+ *     //this will conditionaly add to accrual bonus:{amount:10000, description:'second part of bonus'}
+ *   }
+ * ]
+ * ```
+ */
 export type CashflowAccrualDefinitions = CashflowAccrualDefinition[] | {[key:string]:CashflowAccrualDefinition}
 
 export type CashflowAccrualDefinition=(period:CashflowProjection)=>(
