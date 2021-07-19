@@ -1,7 +1,7 @@
 {
     "name": "cashflow-projections",
     "version": "0.0.6",
-    "description": "JS utilities to generate cashflow projections",
+    "description": "JS utilities helping to generate cashflow projections",
     "repository": {
         "url": "https://github.com/pmunin/cashflow-projections.js.git"
     },
@@ -22,7 +22,8 @@
         "build:dev": "webpack --mode=development",
         "build:prod": "webpack --mode=production --node-env=production",
         "watch": "webpack --watch",
-        "doc": "typedoc"
+        "doc": "typedoc",
+        "version:patch": "npm version patch"
     },
     "author": "pmunin <philipp.munin@gmail.com> (http://pmunin.com/)",
     "license": "ISC",
