@@ -27,13 +27,18 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
+      - name: Git & NPM config
+        run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          npm config set save false
+
       # Runs a single command using the runners shell
       - name: Check version
         run: npm version
 
       - name: npm install
         run: |
-          npm config set save false
           npm i
 
       - name: Version bump
@@ -75,8 +80,6 @@ jobs:
 
       - name: GitHub Push
         run: |
-          git config user.name github-actions
-          git config user.email github-actions@github.com
           git add .
           git commit --amend -m "updated by github-actions [skip ci]"
           git push --tags
