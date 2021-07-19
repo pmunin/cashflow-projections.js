@@ -37,6 +37,8 @@ jobs:
 
       - name: Version bump
         run: |
+          git status
+          git diff
           npm run version:patch
 
       - name: Running build
