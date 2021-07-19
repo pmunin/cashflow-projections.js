@@ -94,7 +94,7 @@
 					<div class="tsd-signature tsd-kind-icon">Cashflow<wbr>Accrual<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><a href="modules.html#CashflowAccrualObject" class="tsd-signature-type" data-tsd-kind="Type alias">CashflowAccrualObject</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/pmunin/cashflow-projections.js/blob/a6758c8/src/generateCashflowProjections.ts#L103">generateCashflowProjections.ts:103</a></li>
+							<li>Defined in generateCashflowProjections.ts:103</li>
 						</ul>
 					</aside>
 				</section>
@@ -104,7 +104,7 @@
 					<div class="tsd-signature tsd-kind-icon">Cashflow<wbr>Accrual<wbr>Collection<span class="tsd-signature-symbol">:</span> <a href="modules.html#CashflowAccrualObject" class="tsd-signature-type" data-tsd-kind="Type alias">CashflowAccrualObject</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> &amp; </span><span class="tsd-signature-symbol">{}</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/pmunin/cashflow-projections.js/blob/a6758c8/src/generateCashflowProjections.ts#L101">generateCashflowProjections.ts:101</a></li>
+							<li>Defined in generateCashflowProjections.ts:101</li>
 						</ul>
 					</aside>
 				</section>
@@ -114,7 +114,7 @@
 					<div class="tsd-signature tsd-kind-icon">Cashflow<wbr>Accrual<wbr>Definition<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">(</span>period<span class="tsd-signature-symbol">: </span><a href="modules.html#CashflowProjection" class="tsd-signature-type" data-tsd-kind="Type alias">CashflowProjection</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol"> | </span><a href="modules.html#CashflowAccrual" class="tsd-signature-type" data-tsd-kind="Type alias">CashflowAccrual</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">{}</span><span class="tsd-signature-symbol"> | </span><a href="modules.html#CashflowAccrual" class="tsd-signature-type" data-tsd-kind="Type alias">CashflowAccrual</a><span class="tsd-signature-symbol">[]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/pmunin/cashflow-projections.js/blob/a6758c8/src/generateCashflowProjections.ts#L142">generateCashflowProjections.ts:142</a></li>
+							<li>Defined in generateCashflowProjections.ts:143</li>
 						</ul>
 					</aside>
 					<div class="tsd-type-declaration">
@@ -145,37 +145,37 @@
 					<div class="tsd-signature tsd-kind-icon">Cashflow<wbr>Accrual<wbr>Definitions<span class="tsd-signature-symbol">:</span> <a href="modules.html#CashflowAccrualDefinition" class="tsd-signature-type" data-tsd-kind="Type alias">CashflowAccrualDefinition</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">{}</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/pmunin/cashflow-projections.js/blob/a6758c8/src/generateCashflowProjections.ts#L140">generateCashflowProjections.ts:140</a></li>
+							<li>Defined in generateCashflowProjections.ts:141</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>Defines how to generate accrual for a cashflow projection</p>
+							<p>Defines how to generate accrual for a cashflow projection.</p>
 						</div>
 						<dl class="tsd-comment-tags">
 							<dt>example</dt>
-							<dd><p>{</p>
-								<p>{
-									salary:()=&gt;100000/12,
-									tax:cf=&gt;({amount:-cf.salary<em>0.25, description:&#39;tax&#39;}),
-									bonus:cf=&gt;cf.date.getMonth()==11?cf.salary</em>0.1:undefined
-									}
-									---OR---
-									accruals:
-									[
-									cf=&gt;{
-									var salary = 100000/12;
-									var tax= -salary*0.25,
-									return {
-									salary,
-									tax
-									}
-									},
-									cf=&gt;{
-									if(cf.date.getMonth()==11) return { bonus:{amount:10000, description:&#39;second part of bonus&#39;}};
-									}
-									]
-								}</p>
+							<dd><pre><code class="language-js"><span style="color: #000000">accruals:{ </span><span style="color: #008000">// Can be dictionary of functions</span>
+<span style="color: #000000">  salary:()</span><span style="color: #0000FF">=&gt;</span><span style="color: #098658">100000</span><span style="color: #000000">/</span><span style="color: #098658">12</span><span style="color: #000000">,  </span><span style="color: #008000">//this will create accrual cf.accruals.salary={amount:8333.3333}</span>
+<span style="color: #000000">  tax:</span><span style="color: #001080">cf</span><span style="color: #0000FF">=&gt;</span><span style="color: #000000">({</span><span style="color: #001080">amount:</span><span style="color: #000000">-</span><span style="color: #001080">cf</span><span style="color: #000000">.</span><span style="color: #001080">salary</span><span style="color: #000000">*</span><span style="color: #098658">0.25</span><span style="color: #000000">, </span><span style="color: #001080">description:</span><span style="color: #A31515">&#039;tax&#039;</span><span style="color: #000000">}), </span><span style="color: #008000">//because tax definition is after salary, by the time tax accrual is executed, salary will be already in the accrual collection</span>
+<span style="color: #000000">  bonus:</span><span style="color: #001080">cf</span><span style="color: #0000FF">=&gt;</span><span style="color: #001080">cf</span><span style="color: #000000">.</span><span style="color: #001080">date</span><span style="color: #000000">.</span><span style="color: #795E26">getMonth</span><span style="color: #000000">()==</span><span style="color: #098658">11</span><span style="color: #000000">?</span><span style="color: #001080">cf</span><span style="color: #000000">.</span><span style="color: #001080">salary</span><span style="color: #000000">*</span><span style="color: #098658">0.1</span><span style="color: #000000">:</span><span style="color: #0000FF">undefined</span><span style="color: #000000"> </span><span style="color: #008000">//if returns undefined, it will not be added to the accrual collection</span>
+<span style="color: #000000">}</span>
+<span style="color: #008000">//---OR---</span>
+<span style="color: #000000">accruals: </span><span style="color: #008000">// Can be dictionary of functions</span>
+<span style="color: #000000">[</span>
+<span style="color: #000000">  </span><span style="color: #001080">cf</span><span style="color: #0000FF">=&gt;</span><span style="color: #000000">{</span>
+<span style="color: #000000">    </span><span style="color: #0000FF">var</span><span style="color: #000000"> </span><span style="color: #001080">salary</span><span style="color: #000000"> = </span><span style="color: #098658">100000</span><span style="color: #000000">/</span><span style="color: #098658">12</span><span style="color: #000000">;</span>
+<span style="color: #000000">    </span><span style="color: #0000FF">var</span><span style="color: #000000"> </span><span style="color: #001080">tax</span><span style="color: #000000">= -</span><span style="color: #001080">salary</span><span style="color: #000000">*</span><span style="color: #098658">0.25</span><span style="color: #000000">,</span>
+<span style="color: #000000">    </span><span style="color: #001080">return</span><span style="color: #000000"> { </span><span style="color: #008000">//this will add 2 accruals salary:{amount:8333.3333} and  tax:{amount:-2083.3333)</span>
+<span style="color: #000000">      </span><span style="color: #001080">salary</span><span style="color: #000000">,</span>
+<span style="color: #000000">      </span><span style="color: #001080">tax</span>
+<span style="color: #000000">    }</span>
+<span style="color: #000000">  },</span>
+<span style="color: #000000">  </span><span style="color: #001080">cf</span><span style="color: #0000FF">=&gt;</span><span style="color: #000000">{</span>
+<span style="color: #000000">    </span><span style="color: #AF00DB">if</span><span style="color: #000000">(</span><span style="color: #001080">cf</span><span style="color: #000000">.</span><span style="color: #001080">date</span><span style="color: #000000">.</span><span style="color: #795E26">getMonth</span><span style="color: #000000">()==</span><span style="color: #098658">11</span><span style="color: #000000">) </span><span style="color: #AF00DB">return</span><span style="color: #000000"> { </span><span style="color: #001080">bonus:</span><span style="color: #000000">{</span><span style="color: #001080">amount:</span><span style="color: #098658">10000</span><span style="color: #000000">, </span><span style="color: #001080">description:</span><span style="color: #A31515">&#039;second part of bonus&#039;</span><span style="color: #000000">}};</span>
+<span style="color: #000000">    </span><span style="color: #008000">//this will conditionaly add to accrual bonus:{amount:10000, description:&#039;second part of bonus&#039;}</span>
+<span style="color: #000000">  }</span>
+<span style="color: #000000">]</span>
+</code></pre>
 							</dd>
 						</dl>
 					</div>
@@ -186,7 +186,7 @@
 					<div class="tsd-signature tsd-kind-icon">Cashflow<wbr>Accrual<wbr>Object<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{ </span>amount<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>description<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>key<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> }</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/pmunin/cashflow-projections.js/blob/a6758c8/src/generateCashflowProjections.ts#L105">generateCashflowProjections.ts:105</a></li>
+							<li>Defined in generateCashflowProjections.ts:105</li>
 						</ul>
 					</aside>
 					<div class="tsd-type-declaration">
@@ -213,7 +213,7 @@
 					<div class="tsd-signature tsd-kind-icon">Cashflow<wbr>Args<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{ </span>accruals<span class="tsd-signature-symbol">?: </span><a href="modules.html#CashflowAccrualDefinitions" class="tsd-signature-type" data-tsd-kind="Type alias">CashflowAccrualDefinitions</a><span class="tsd-signature-symbol">; </span>endDate<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">Date</span><span class="tsd-signature-symbol">; </span>periods<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>startDate<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">Date</span><span class="tsd-signature-symbol">; </span>totals<span class="tsd-signature-symbol">?: </span><a href="modules.html#CashflowAccrualDefinitions" class="tsd-signature-type" data-tsd-kind="Type alias">CashflowAccrualDefinitions</a><span class="tsd-signature-symbol">; </span>finalizePeriod<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">; </span>getNextDate<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">; </span>initPeriod<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> }</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/pmunin/cashflow-projections.js/blob/a6758c8/src/generateCashflowProjections.ts#L48">generateCashflowProjections.ts:48</a></li>
+							<li>Defined in generateCashflowProjections.ts:48</li>
 						</ul>
 					</aside>
 					<div class="tsd-type-declaration">
@@ -268,7 +268,7 @@
 									<li class="tsd-description">
 										<aside class="tsd-sources">
 											<ul>
-												<li>Defined in <a href="https://github.com/pmunin/cashflow-projections.js/blob/a6758c8/src/generateCashflowProjections.ts#L83">generateCashflowProjections.ts:83</a></li>
+												<li>Defined in generateCashflowProjections.ts:83</li>
 											</ul>
 										</aside>
 										<h4 class="tsd-parameters-title">Parameters</h4>
@@ -290,7 +290,7 @@
 									<li class="tsd-description">
 										<aside class="tsd-sources">
 											<ul>
-												<li>Defined in <a href="https://github.com/pmunin/cashflow-projections.js/blob/a6758c8/src/generateCashflowProjections.ts#L70">generateCashflowProjections.ts:70</a></li>
+												<li>Defined in generateCashflowProjections.ts:70</li>
 											</ul>
 										</aside>
 										<div class="tsd-comment tsd-typography">
@@ -320,7 +320,7 @@
 									<li class="tsd-description">
 										<aside class="tsd-sources">
 											<ul>
-												<li>Defined in <a href="https://github.com/pmunin/cashflow-projections.js/blob/a6758c8/src/generateCashflowProjections.ts#L82">generateCashflowProjections.ts:82</a></li>
+												<li>Defined in generateCashflowProjections.ts:82</li>
 											</ul>
 										</aside>
 										<h4 class="tsd-parameters-title">Parameters</h4>
@@ -342,7 +342,7 @@
 					<div class="tsd-signature tsd-kind-icon">Cashflow<wbr>Projection<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{ </span>accruals<span class="tsd-signature-symbol">: </span><a href="modules.html#CashflowAccrualCollection" class="tsd-signature-type" data-tsd-kind="Type alias">CashflowAccrualCollection</a><span class="tsd-signature-symbol">; </span>context<span class="tsd-signature-symbol">: </span><a href="modules.html#CashflowArgs" class="tsd-signature-type" data-tsd-kind="Type alias">CashflowArgs</a><span class="tsd-signature-symbol">; </span>date<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Date</span><span class="tsd-signature-symbol">; </span>period<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>previous<span class="tsd-signature-symbol">: </span><a href="modules.html#CashflowProjection" class="tsd-signature-type" data-tsd-kind="Type alias">CashflowProjection</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">; </span>totals<span class="tsd-signature-symbol">: </span><a href="modules.html#CashflowAccrualCollection" class="tsd-signature-type" data-tsd-kind="Type alias">CashflowAccrualCollection</a><span class="tsd-signature-symbol"> }</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/pmunin/cashflow-projections.js/blob/a6758c8/src/generateCashflowProjections.ts#L92">generateCashflowProjections.ts:92</a></li>
+							<li>Defined in generateCashflowProjections.ts:92</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -391,7 +391,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/pmunin/cashflow-projections.js/blob/a6758c8/src/generateCashflowProjections.ts#L10">generateCashflowProjections.ts:10</a></li>
+									<li>Defined in generateCashflowProjections.ts:10</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -423,7 +423,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/pmunin/cashflow-projections.js/blob/a6758c8/src/generateCashflowProjections.ts#L43">generateCashflowProjections.ts:43</a></li>
+									<li>Defined in generateCashflowProjections.ts:43</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -446,7 +446,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/pmunin/cashflow-projections.js/blob/a6758c8/src/getNextDay.ts#L1">getNextDay.ts:1</a></li>
+									<li>Defined in getNextDay.ts:1</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -469,7 +469,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/pmunin/cashflow-projections.js/blob/a6758c8/src/getNextDay.ts#L7">getNextDay.ts:7</a></li>
+									<li>Defined in getNextDay.ts:7</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -492,7 +492,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/pmunin/cashflow-projections.js/blob/a6758c8/src/getNextDay.ts#L14">getNextDay.ts:14</a></li>
+									<li>Defined in getNextDay.ts:14</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>

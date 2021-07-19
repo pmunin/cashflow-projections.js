@@ -80,6 +80,7 @@ jobs:
         git add .
         git commit --amend -m "updated by github-actions [skip ci]"
         git push --tags
+        git push
 
     - uses: actions/setup-node@v2
       with:
