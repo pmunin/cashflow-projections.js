@@ -78,7 +78,7 @@ jobs:
     - name: GitHub Push
       run: |
         git add .
-        git commit --amend -m "updated by github-actions [skip ci]"
+        git commit --amend -m "github-actions: version upgrade [skip ci]"
         git push --tags origin master
         git push origin master
 
