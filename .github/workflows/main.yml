@@ -33,10 +33,13 @@ jobs:
 
       - name: npm install
         run: |
+          npm config set save false
           npm i
 
       - name: Version bump
         run: |
+          git status
+          git diff
           npm run version:patch
 
       - name: Running build
